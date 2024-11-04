@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Mascotas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>Mascotas</h1>

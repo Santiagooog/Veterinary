@@ -10,44 +10,67 @@
 <head>
     <title>Login</title>
 </head>
-<body>
 <section class="container">
     <h1>Login</h1>
     <form action="login" method="POST">
-        <label>
-            <input type="number" placeholder="User" required name="usuario">
-        </label>
-        <label>
-            <input type="text" placeholder="Password" required name="clave">
-        </label>
-        <input class="boton" type="submit">
+        <div class="inputs">
+            <label>
+                <input type="text" placeholder="User" required name="usuario">
+            </label>
+        </div>
+        <div class="inputs">
+            <label>
+                <input type="text" placeholder="Password" required name="clave">
+            </label>
+        </div>
+        <div class="boton">
+            <input class="boton" type="submit" value="Ingresar">
+        </div>
     </form>
 </section>
-</body>
 <style>
     body{
-        background-color: aliceblue;
-
-        display: flex;
-        justify-content: center;
+        margin :50px;
+        background-color: #88b5ef;
     }
 
     .container{
-        margin-top: 80px;
-        align-items: center;
-        background-color: beige;
-        max-width: 220px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        background-color: azure;
+        width: 400px;
+        height: 500px;
+        margin: auto;
         padding: 20px;
-
+        justify-items: center;
+        box-sizing: border-box;
+        border-radius: 50px;
+    }
+    h1{
+        color: #88b5ef;
+        font-size: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    form{
+        border-radius: 50px;
+        padding: 5px;
+        background-color: #88b5efd3;
+        width: 300px;
+        height: 280px;
+        justify-items: center;
+    }
+    .inputs input{
+        margin-top: 30px;
+        border-radius: 10px;
+        width: 200px;
+        height: 40px;
     }
 
-    .container input{
-        max-width: 200px;
-        margin-bottom: 30px;
+    .boton{
+        margin-top: 30px;
+    }
+    .boton input{
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
     }
 
 </style>

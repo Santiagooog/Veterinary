@@ -1,50 +1,115 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Crear mascota</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section>
-    <form action="crear-mascota" method="POST">
+<section class="form-section">
+    <form action="crear-mascota" method="POST" class="styled-form">
+        <h2>Crear Mascota</h2>
         <label>
             Nombre
-            <input type="text" name="nombre">
+            <input type="text" name="nombre" required>
         </label>
         <label>
             Raza
-            <input type="text" name="raza">
+            <input type="text" name="raza" required>
         </label>
         <label>
             Edad
-            <input type="number" name="edad">
+            <input type="number" name="edad" required>
         </label>
         <label>
-            Id del dueño
-            <input type="number" name="dueno_id">
+            ID del Dueño
+            <input type="number" name="dueno_id" required>
         </label>
         <label>
-            Id del veterinario
-            <input type="number" name="veterinario_id">
+            ID del Veterinario
+            <input type="number" name="veterinario_id" required>
         </label>
-        <input type="submit" value="Crear mascota">
-
+        <input type="submit" value="Crear mascota" class="submit-button">
     </form>
 </section>
 </body>
 <style>
-    section{
-        background-color: #8e8b8b;
-        display:flex;
-        max-width: 900px;
-        justify-content:center;
-        margin:0;
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f3f4f6;
+        margin: 0;
     }
-    label{
-        display:flex;
-        margin-top:30px;
-        margin-bottom:10px;
-        margin-left: 10px;
+
+    .form-section {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
     }
+
+    /* Form Styles */
+    .styled-form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .styled-form h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Label and Input Styles */
+    .styled-form label {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .styled-form input[type="text"],
+    .styled-form input[type="number"] {
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .styled-form input[type="text"]:focus,
+    .styled-form input[type="number"]:focus {
+        border-color: #4a90e2;
+    }
+
+    /* Submit Button Styles */
+    .submit-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .submit-button:hover {
+        background-color: #357abd;
+    }
+
 </style>
 </html>

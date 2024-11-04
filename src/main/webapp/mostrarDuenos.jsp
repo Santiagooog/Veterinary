@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>Dueños</h1>
