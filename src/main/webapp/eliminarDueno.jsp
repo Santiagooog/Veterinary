@@ -6,7 +6,7 @@
 </head>
 <body>
 <section class="form-section">
-  <form action="delete-vet" method="POST" class="styled-form">
+  <form action="delete-dueno" method="POST" class="styled-form">
     <h2>Eliminar Dueño</h2>
     <label>
       Id

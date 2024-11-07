@@ -1,17 +1,20 @@
-package org.example.demo1;
+package Servlets;
 
+import Controller.DuenoController;
 import Controller.VeterinarioController;
+import Model.Dueno;
 import Model.Veterinario;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
-@WebServlet(name = "actu-vet", value = "/actu-vet")
-public class SvActuVet extends HttpServlet {
+@WebServlet(name = "actu-dueno", value = "/actu-dueno")
+public class SvActualizarDueno extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("actualizarVet.jsp");
+        response.sendRedirect("actualizarDueno.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -20,22 +23,21 @@ public class SvActuVet extends HttpServlet {
         int edad = Integer.parseInt(request.getParameter("edad"));
         String direccion = request.getParameter("direccion");
         String telefono = request.getParameter("telefono");
-        String codigoProfesional = request.getParameter("codigoProfesional");
-        Veterinario veterinario = new Veterinario();
-        veterinario.setName(nombre);
-        veterinario.setAge(edad);
-        veterinario.setAdress(direccion);
-        veterinario.setPhone(telefono);
-        veterinario.setCodigoProfesional(codigoProfesional);
+        String email = request.getParameter("email");
+        Dueno dueno = new Dueno();
+        dueno.setName(nombre);
+        dueno.setAge(edad);
+        dueno.setAdress(direccion);
+        dueno.setPhone(telefono);
+        dueno.setEmail(email);
 
-        VeterinarioController vet = new VeterinarioController();
-        if(vet.obtenerVeterinarioById(id)!=null){
+        DuenoController due = new DuenoController();
+        if(due.obtenerDuenoById(id)!=null){
             System.out.println("el id a actualizar existe");
-            vet.actualizarVeterinario(veterinario,id);
+            due.actualizarDueno(dueno,id);
         }else{
-            System.out.println("El veterinario no existe");
+            System.out.println("El dueno no existe");
         }
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("login.jsp");
     }
-
 }

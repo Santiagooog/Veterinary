@@ -1,4 +1,4 @@
-package org.example.demo1;
+package Servlets;
 
 import Controller.DuenoController;
 import Controller.VeterinarioController;

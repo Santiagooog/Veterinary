@@ -19,6 +19,7 @@ public class VeterinarioController {
         PreparedStatement ps;
         ResultSet rs;
         List<Veterinario> listaVeterinarios = new ArrayList<>();
+
         try {
             Connection con = getConnection();
             ps = con.prepareStatement("select * from veterinario");
@@ -120,27 +121,5 @@ public class VeterinarioController {
         }
     }
 
-    public List<Dueno> obtenerDuenos(){
-            PreparedStatement ps;
-            ResultSet rs;
-            List<Dueno> listaDuenos = new ArrayList<>();
-            try {
-                Connection con = getConnection();
-                ps = con.prepareStatement("select * from dueno");
-                rs = ps.executeQuery();
-                while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String nombre = rs.getString("nombre");
-                    int edad = rs.getInt("edad");
-                    String direccion = rs.getString("direccion");
-                    String telefono = rs.getString("telefono");
-                    String email = rs.getString("email");
-                    Dueno dueno = new Dueno(id, nombre, edad, direccion, telefono, email);
-                    listaDuenos.add(dueno);
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            return listaDuenos;
-    }
+
 }

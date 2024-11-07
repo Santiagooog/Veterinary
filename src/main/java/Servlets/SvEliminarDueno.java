@@ -1,23 +1,24 @@
-package org.example.demo1;
+package Servlets;
 
+import Controller.DuenoController;
 import Controller.VeterinarioController;
-import Model.Veterinario;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
-@WebServlet(name = "delete-vet", value = "/delete-vet")
-public class SvDeletVet extends HttpServlet {
+@WebServlet(name = "delete-dueno", value = "/delete-dueno")
+public class SvEliminarDueno extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("deleteVet.jsp");
+        response.sendRedirect("eliminarDueno.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        VeterinarioController vet = new VeterinarioController();
-        vet.eliminarVeterinario(id);
-        response.sendRedirect("index.jsp");
+        DuenoController dueno = new DuenoController();
+        dueno.eliminarDueno(id);
+        response.sendRedirect("login.jsp");
     }
 }

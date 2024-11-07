@@ -1,4 +1,4 @@
-package org.example.demo1;
+package Servlets;
 
 import Controller.VeterinarioController;
 import Model.Veterinario;
@@ -6,12 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "crear-id", value = "/crear-vet")
-public class ServletCrearVet extends HttpServlet {
+public class SvCrearVeterinario extends HttpServlet {
         public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
             response.sendRedirect("crearVet.jsp");
         }
@@ -33,6 +32,6 @@ public class ServletCrearVet extends HttpServlet {
             vet.insertarVeterinario(veterinario);
 
 
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login.jsp");
         }
 }

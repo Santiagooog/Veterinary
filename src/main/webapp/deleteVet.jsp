@@ -1,18 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Eliminar Dueño</title>
+    <title>Eliminar veterinario</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <section class="form-section">
-    <form action="delete-dueno" method="POST" class="styled-form">
-        <h2>Eliminar Dueño</h2>
+    <form action="delete-vet" method="POST" class="styled-form">
+        <h2>Eliminar veterinario</h2>
         <label>
             Id
             <input type="text" name="id" required>
         </label>
-        <input type="submit" value="Eliminar dueño" class="submit-button">
+        <input type="submit" value="Eliminar veterinario" class="submit-button">
     </form>
 </section>
 </body>
