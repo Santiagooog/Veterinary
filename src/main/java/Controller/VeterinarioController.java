@@ -66,7 +66,7 @@ public class VeterinarioController {
         return vet;
 
     }
-    public void insertarVeterinario(Veterinario vet) {
+    public boolean insertarVeterinario(Veterinario vet) {
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -81,11 +81,15 @@ public class VeterinarioController {
             ps.setString(5,vet.getCodigoProfesional());
             int rows = ps.executeUpdate();
             System.out.println("insertado "+rows);
+            if(rows>0)
+                return true;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
-    public void eliminarVeterinario(int id) {
+    public boolean eliminarVeterinario(int id) {
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -95,12 +99,15 @@ public class VeterinarioController {
             ps.setInt(1,id);
             int rows = ps.executeUpdate();
             System.out.println("Filas eliminadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
-    public void actualizarVeterinario(Veterinario vet,int id){
+    public boolean actualizarVeterinario(Veterinario vet,int id){
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -116,9 +123,12 @@ public class VeterinarioController {
             ps.setInt(6,id);
             int rows = ps.executeUpdate();
             System.out.println("Filas afectadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
 

@@ -7,6 +7,9 @@ public class Conexion {
     private static final String PASSWORD = "santiago258";
     private static Connection connection = null;
 
+    public static void main(String[] args) {
+        System.out.println(getConnection());
+    }
     public static Connection getConnection() {
         if (connection == null) {
             try {
@@ -22,14 +25,5 @@ public class Conexion {
         return connection;
     }
 
-    public static void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-                System.out.println("Conexión cerrada.");
-            } catch (SQLException e) {
-                System.out.println("Error al cerrar la conexión: " + e.getMessage());
-            }
-        }
-    }
+
 }

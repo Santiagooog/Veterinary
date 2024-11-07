@@ -18,6 +18,13 @@ public class Persona {
         this.adress = adress;
         this.phone = phone;
     }
+    public Persona(String name, int age, String adress, String phone) {
+        this.name = name;
+        this.age = age;
+        this.adress = adress;
+        this.phone = phone;
+    }
+
 
     public int getId() {
         return id;

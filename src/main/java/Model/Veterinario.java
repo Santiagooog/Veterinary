@@ -14,6 +14,10 @@ public class Veterinario extends Persona {
         super(id, name, age, adress, phone);
         this.codigoProfesional = codigoProfesional;
     }
+    public Veterinario(String name, int age, String adress, String phone, String codigoProfesional) {
+        super(name, age, adress, phone);
+        this.codigoProfesional = codigoProfesional;
+    }
 
     public String getCodigoProfesional() {
         return codigoProfesional;

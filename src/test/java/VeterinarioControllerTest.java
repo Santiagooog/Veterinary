@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class VeterinarioControllerTest {
     public VeterinarioControllerTest() {
@@ -69,11 +69,9 @@ public class VeterinarioControllerTest {
     @Test
     public void testInsertarVeterinario() {
         System.out.println("insertarVeterinario");
-        Veterinario vet = null;
-        VeterinarioController instance = new VeterinarioController();
-        instance.insertarVeterinario(vet);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        Veterinario vet = new Veterinario("Manuela",26,"Avenida59","165484","ABCD55");
+        VeterinarioController veterinario = new VeterinarioController();
+        assertTrue(veterinario.insertarVeterinario(vet));
     }
 
     /**
@@ -83,8 +81,8 @@ public class VeterinarioControllerTest {
     public void testEliminarVeterinario() {
         System.out.println("eliminarVeterinario");
         int id = 0;
-        VeterinarioController instance = new VeterinarioController();
-        instance.eliminarVeterinario(id);
+        VeterinarioController veterinario = new VeterinarioController();
+        assertFalse(veterinario.eliminarVeterinario(id));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -95,10 +93,10 @@ public class VeterinarioControllerTest {
     @Test
     public void testActualizarVeterinario() {
         System.out.println("actualizarVeterinario");
-        Veterinario vet = null;
+        Veterinario vet = new Veterinario("Luisina",30,"Madrid","3164545","PRUEBA");
         int id = 0;
-        VeterinarioController instance = new VeterinarioController();
-        instance.actualizarVeterinario(vet, id);
+        VeterinarioController veterinario = new VeterinarioController();
+        assertFalse(veterinario.actualizarVeterinario(vet, id));
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
