@@ -40,7 +40,7 @@ public class DuenoController {
         return dueno;
 
     }
-    public void insertarDueno(Dueno dueno) {
+    public boolean insertarDueno(Dueno dueno) {
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -55,11 +55,15 @@ public class DuenoController {
             ps.setString(5,dueno.getEmail());
             int rows = ps.executeUpdate();
             System.out.println("insertado "+rows);
+            System.out.println("Filas afectadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
-    public void eliminarDueno(int id) {
+    public boolean eliminarDueno(int id) {
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -69,12 +73,16 @@ public class DuenoController {
             ps.setInt(1,id);
             int rows = ps.executeUpdate();
             System.out.println("Filas eliminadas "+rows);
+            System.out.println("Filas afectadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
-    public void actualizarDueno(Dueno dueno,int id){
+    public boolean actualizarDueno(Dueno dueno,int id){
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -90,9 +98,13 @@ public class DuenoController {
             ps.setInt(6,id);
             int rows = ps.executeUpdate();
             System.out.println("Filas afectadas "+rows);
+            System.out.println("Filas afectadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
     public List<Dueno> obtenerDuenos(){

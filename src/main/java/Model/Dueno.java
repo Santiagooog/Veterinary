@@ -10,6 +10,11 @@ public class Dueno extends Persona{
         super(id, name, age, adress, phone);
         this.email = email;
     }
+    public Dueno(String name, int age, String adress, String phone, String email) {
+        super(name, age, adress, phone);
+        this.email = email;
+    }
+
 
     public Dueno(String email) {
         this.email = email;

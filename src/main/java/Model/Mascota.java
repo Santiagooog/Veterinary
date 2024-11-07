@@ -19,6 +19,13 @@ public class Mascota {
         this.idDueno = idDueno;
         this.idVeterinario = idVeterinario;
     }
+    public Mascota(String name, String breed, int age, int idDueno, int idVeterinario) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+        this.idDueno = idDueno;
+        this.idVeterinario = idVeterinario;
+    }
 
     public int getId() {
         return id;

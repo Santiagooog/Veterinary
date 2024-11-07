@@ -40,7 +40,7 @@ public class MascotaController {
         return mascota;
 
     }
-    public void insertarMascota(Mascota mascota) {
+    public boolean insertarMascota(Mascota mascota) {
 
 
         PreparedStatement ps;
@@ -62,12 +62,16 @@ public class MascotaController {
             ps.setInt(5,mascota.getIdVeterinario());
             int rows = ps.executeUpdate();
             System.out.println("insertado "+rows);
+                System.out.println("Filas afectadas "+rows);
+                if(rows>0)
+                    return true;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
-    public void eliminarMascota(int id) {
+    public boolean eliminarMascota(int id) {
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -77,12 +81,16 @@ public class MascotaController {
             ps.setInt(1,id);
             int rows = ps.executeUpdate();
             System.out.println("Filas eliminadas "+rows);
+            System.out.println("Filas afectadas "+rows);
+            if(rows>0)
+                return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
-    public void actualizarMascota(Mascota mascota,int id){
+    public boolean actualizarMascota(Mascota mascota,int id){
         PreparedStatement ps;
         ResultSet rs;
         try{
@@ -102,12 +110,16 @@ public class MascotaController {
                 ps.setInt(5,mascota.getIdVeterinario());
                 ps.setInt(6,id);
                 int rows = ps.executeUpdate();
+                System.out.println("Filas afectadas "+rows);
+                if(rows>0)
+                    return true;
                 System.out.println("insertado "+rows);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return false;
     }
 
     public List<Mascota> obtenerMascotas(){

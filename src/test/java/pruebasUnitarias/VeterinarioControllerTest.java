@@ -1,10 +1,8 @@
+package pruebasUnitarias;
+
 import Controller.VeterinarioController;
-import Model.Dueno;
 import Model.Veterinario;
 import org.junit.jupiter.api.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,15 +31,11 @@ public class VeterinarioControllerTest {
      */
     @Test
     public void testObtenerVeterinarios() {
-        List<Veterinario> listaVet = new ArrayList<>();
         Veterinario vet = new Veterinario(1,"Santiago Gomez", 22, "CRA5#185c21", "3246715510","ABC12345");
-        listaVet.add(vet);
-
         System.out.println("obtenerVeterinarios");
         VeterinarioController instance = new VeterinarioController();
         String result = vet.getName();
         Veterinario nameBD = instance.obtenerVeterinarios().getFirst();
-        System.out.println(nameBD);
         String expResult = nameBD.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
