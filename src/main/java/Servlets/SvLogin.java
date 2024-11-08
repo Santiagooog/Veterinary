@@ -14,6 +14,7 @@ import java.util.List;
 @WebServlet(name = "login", value = "/login")
 public class SvLogin extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
