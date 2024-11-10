@@ -12,7 +12,7 @@
       Id
       <input type="text" name="id" required>
     </label>
-    <input type="submit" value="Eliminar veterinario" class="submit-button">
+    <input type="submit" value="Eliminar dueño" class="submit-button">
   </form>
 </section>
 </body>

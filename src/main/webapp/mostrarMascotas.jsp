@@ -9,7 +9,7 @@
 <body>
 <h1>Mascotas</h1>
 <section class="container">
-    <h1>Lista de dueños</h1>
+    <h1>Lista de mascotas</h1>
 
     <form action="mascota-id" method="POST">
         <label>Id

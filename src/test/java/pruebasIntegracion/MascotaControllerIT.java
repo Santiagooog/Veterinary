@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static persistencia.Conexion.getConnection;
 
 public class MascotaControllerIT {
@@ -22,7 +22,7 @@ public class MascotaControllerIT {
     public void setUp() {
         mascotaController = new MascotaController();
         mascota = new Mascota();
-        mascota.setName("Hugo");
+        mascota.setName("Lobin");
         mascota.setBreed("Lobo");
         mascota.setAge(10);
         mascota.setIdDueno(1);
@@ -55,6 +55,6 @@ public class MascotaControllerIT {
         Mascota masc = mascotaController.obtenerMascotaById(9);
         // Eliminamos el veterinario
         boolean eliminacion = mascotaController.eliminarMascota(9);
-        assertEquals(true, eliminacion);
+        assertTrue(eliminacion);
     }
 }

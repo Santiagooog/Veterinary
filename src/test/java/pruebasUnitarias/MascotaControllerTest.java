@@ -46,7 +46,7 @@ public class MascotaControllerTest {
      */
     @Test
     public void testInsertarMascota() {
-        System.out.println("insertarDueno");
+        System.out.println("insertarMascota");
         Mascota masc = new Mascota("Tiberius", "Doberman", 5, 1,1);
         MascotaController mascota = new MascotaController();
         assertTrue(mascota.insertarMascota(masc));

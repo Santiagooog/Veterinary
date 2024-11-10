@@ -7,9 +7,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import persistencia.Conexion;
 
+import javax.swing.*;
 import java.sql.Connection;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static persistencia.Conexion.getConnection;
+
 public class ConexionTest {
 
     public ConexionTest(){
@@ -31,13 +34,7 @@ public class ConexionTest {
     @Test
     public void testGetConnection() {
         System.out.println("Conexión con la base de datos");
-        boolean expResult=false;
-        Connection conexion = Conexion.getConnection();
-        boolean result = true;
-        if(conexion!=null){
-            expResult=true;
-        }
-        assertEquals(expResult, result);
+        assertNotNull(getConnection());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

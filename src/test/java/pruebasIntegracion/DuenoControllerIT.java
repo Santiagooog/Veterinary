@@ -9,8 +9,7 @@ import org.junit.jupiter.api.*;
 import java.sql.Connection;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static persistencia.Conexion.getConnection;
 
 public class DuenoControllerIT {
@@ -22,11 +21,11 @@ public class DuenoControllerIT {
     public void setUp() {
         duenoController = new DuenoController();
         dueno = new Dueno();
-        dueno.setName("Hugo");
-        dueno.setAge(26);
+        dueno.setName("Mario Bross");
+        dueno.setAge(30);
         dueno.setPhone("154871");
         dueno.setAdress("Carolina, Av 18");
-        dueno.setEmail("veteri@hotmail.com");
+        dueno.setEmail("duenio@hotmail.com");
     }
 
     @Test
@@ -53,7 +52,7 @@ public class DuenoControllerIT {
         Dueno duen = duenoController.obtenerDuenoById(6);
         // Eliminamos el veterinario
         boolean eliminacion = duenoController.eliminarDueno(6);
-        assertEquals(true, eliminacion);
+        assertTrue(eliminacion);
     }
 
 }
