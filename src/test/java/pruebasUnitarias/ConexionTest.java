@@ -35,7 +35,5 @@ public class ConexionTest {
     public void testGetConnection() {
         System.out.println("Conexión con la base de datos");
         assertNotNull(getConnection());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }

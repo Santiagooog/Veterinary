@@ -26,9 +26,6 @@ public class VeterinarioControllerTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of obtenerVeterinarios method, of class VeterinarioController.
-     */
     @Test
     public void testObtenerVeterinarios() {
         Veterinario vet = new Veterinario(1,"Santiago Gomez", 22, "CRA5#185c21", "3246715510","ABC12345");
@@ -38,13 +35,8 @@ public class VeterinarioControllerTest {
         Veterinario nameBD = instance.obtenerVeterinarios().getFirst();
         String expResult = nameBD.getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of obtenerVeterinarioById method, of class VeterinarioController.
-     */
     @Test
     public void testObtenerVeterinarioById() {
         System.out.println("obtenerVeterinarioById");
@@ -53,13 +45,7 @@ public class VeterinarioControllerTest {
         String expResult = "Santiago Gomez";
         String result = instance.obtenerVeterinarioById(id).getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of insertarVeterinario method, of class VeterinarioController.
-     */
     @Test
     public void testInsertarVeterinario() {
         System.out.println("insertarVeterinario");
@@ -68,22 +54,14 @@ public class VeterinarioControllerTest {
         assertTrue(veterinario.insertarVeterinario(vet));
     }
 
-    /**
-     * Test of eliminarVeterinario method, of class VeterinarioController.
-     */
     @Test
     public void testEliminarVeterinario() {
         System.out.println("eliminarVeterinario");
         int id = 0;
         VeterinarioController veterinario = new VeterinarioController();
         assertFalse(veterinario.eliminarVeterinario(id));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of actualizarVeterinario method, of class VeterinarioController.
-     */
     @Test
     public void testActualizarVeterinario() {
         System.out.println("actualizarVeterinario");
@@ -91,8 +69,6 @@ public class VeterinarioControllerTest {
         int id = 0;
         VeterinarioController veterinario = new VeterinarioController();
         assertFalse(veterinario.actualizarVeterinario(vet, id));
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
 }
